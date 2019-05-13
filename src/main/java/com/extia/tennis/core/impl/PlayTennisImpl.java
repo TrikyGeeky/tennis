@@ -7,6 +7,7 @@ public class PlayTennisImpl implements PlayTennis{
 	
 	private Player player1;
 	private Player player2;
+	private Player winner;
 	
 	public PlayTennisImpl() {}
 	
@@ -22,11 +23,10 @@ public class PlayTennisImpl implements PlayTennis{
 	}
 
 	public Player whosWinner() {
-		if (!(player1.isWinner() || player2.isWinner())) {
+		if (winner == null) {
 			System.out.println("No player has won yet");
 			return null;
 		} else {
-			Player winner = player1.isWinner() ? player1 : player2;
 			System.out.println("The player " + winner.getName() + " is the winner of the game");
 			return winner;
 		}
@@ -35,7 +35,7 @@ public class PlayTennisImpl implements PlayTennis{
 	public void winPoint(Player player) {
 		Player currentPlayer = getCurrentPlayer(player);
 		if (currentPlayer.getScore() == 40) {
-			currentPlayer.setWinner(true);
+			winner = currentPlayer;
 			player1.addPoints(0);
 			player2.addPoints(0);
 		} else if (currentPlayer.getScore() == 30) {
