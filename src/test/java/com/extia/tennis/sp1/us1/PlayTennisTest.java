@@ -1,11 +1,11 @@
-package com.extia.tennis;
+package com.extia.tennis.sp1.us1;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.extia.tennis.core.impl.PlayTennisImpl;
+import com.extia.tennis.core.impl.sp1.PlayTennisImpl;
 
 /**
  * Unit test for Tennis App.

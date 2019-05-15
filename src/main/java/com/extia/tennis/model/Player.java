@@ -19,10 +19,12 @@ public class Player {
 	}
 	
 	public void addPoints(Integer points) {
-		if (points != 0) {
-			score += points;
+		if (points == TennisRules.ADV.getValue() 
+				|| points == TennisRules.DEUCE.getValue() 
+				|| points == TennisRules.INITIAL.getValue()) {
+			this.score = points;
 		} else {
-			score = points;
+			this.score += points;
 		}
 	}
 
